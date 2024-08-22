@@ -12,6 +12,13 @@
                     "hostPort": 80,
                     "protocol": "tcp",
                     "appProtocol": "http"
+                },
+                {
+                    "name": "task_manager-8000-tcp",
+                    "containerPort": 8000,
+                    "hostPort": 8000,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
                 }
             ],
             "essential": true,
