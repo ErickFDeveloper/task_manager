@@ -37,7 +37,7 @@ RUN npm run build
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
 # Exponer el puerto 8000 para el servidor embebido de PHP
-EXPOSE 80
+EXPOSE 8080
 
 # Ejecutar las migraciones al iniciar el contenedor
-CMD php artisan migrate && php artisan serve --host=0.0.0.0 --port=80 
+CMD php artisan migrate && php artisan serve --host=0.0.0.0 --port=8080 
