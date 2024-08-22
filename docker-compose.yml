@@ -4,11 +4,10 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: laravel_inertia_app
-    dns: 8.8.8.8
     volumes:
       - .:/var/www
     ports:
-      - "8000:8000"
+      - "80:8000"
     depends_on:
       - mysql
     networks:
