@@ -16,8 +16,6 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo_mysql gd zip
 
-RUN a2enmod rewrite headers
-
 # Instalar Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
