@@ -4,6 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: laravel_inertia_app
+    dns: 8.8.8.8
     volumes:
       - .:/var/www
     ports:
