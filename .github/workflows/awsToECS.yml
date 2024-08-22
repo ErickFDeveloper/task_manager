@@ -64,6 +64,9 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
+    - name: Copy environment file
+      run: cp .env.example .env
+
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
       env:
