@@ -43,5 +43,11 @@ jobs:
       - name: Generate app key
         run: php artisan key:generate
 
+      - name: Install Node dependencies
+        run: npm install
+
+      - name: Build React App
+        run: npm install
+
       - name: Execute tests
         run: php artisan test
