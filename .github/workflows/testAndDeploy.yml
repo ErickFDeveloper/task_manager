@@ -41,7 +41,11 @@ jobs:
         run: composer install --prefer-dist --no-interaction --no-progress
 
       - name: Copy environment file
-        run: cp .env.example .env
+        run: | 
+          cp .env.example .env
+          echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
+          echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
 
       - name: Generate app key
         run: php artisan key:generate
@@ -77,7 +81,11 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v1
 
     - name: Copy environment file
-      run: cp .env.example .env
+      run: |
+        cp .env.example .env
+        echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
+        echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
+        echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
 
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
