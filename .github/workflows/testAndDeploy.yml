@@ -24,12 +24,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
 
-    strategy:
-      fail-fast: true
-      matrix:
-        php: 8.2
-
-    name: PHP ${{ matrix.php }}
+    name: PHP 8.2
 
     steps:
       - name: Checkout code
