@@ -1,4 +1,15 @@
-name: Tests
+name: Tests and Deploy
+
+env:
+  AWS_REGION: us-east-2                     
+  ECR_REPOSITORY: test_ml_demo         
+  ECS_SERVICE: task_manager                
+  ECS_CLUSTER: task_manage                 
+  ECS_TASK_DEFINITION: task_manager.json 
+  CONTAINER_NAME: task_manager  
+                                              
+permissions:
+  contents: read
 
 on:
   push:
@@ -52,23 +63,6 @@ jobs:
       - name: Execute tests
         run: php artisan test
 
-
-name: Deploy to Amazon ECS
-    
-env:
-  AWS_REGION: us-east-2                     
-  ECR_REPOSITORY: test_ml_demo         
-  ECS_SERVICE: task_manager                
-  ECS_CLUSTER: task_manage                 
-  ECS_TASK_DEFINITION: task_manager.json 
-                  
-  CONTAINER_NAME: task_manager  
-                                              
-
-permissions:
-  contents: read
-
-jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
