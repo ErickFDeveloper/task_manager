@@ -22,8 +22,8 @@ Sigue estos pasos para instalar y ejecutar la aplicación localmente:
     Clona el repositorio y navega al directorio del proyecto:
 
     ```bash
-    git clone https://github.com/tu_usuario/tu_repositorio.git
-    cd tu_repositorio
+    git clone https://github.com/ErickFDeveloper/task_manager.git
+    cd task_manager
 
 2. **Instalar dependencias de php**
 
@@ -39,29 +39,32 @@ Sigue estos pasos para instalar y ejecutar la aplicación localmente:
     ```bash
     npm install
 
-
 4. **Configurar el Archivo de Entorno**
 
     Cambiale el nombre al archivo `.env.example` a `.env`, e incluye las siguientes constantes:
 
-    `DB_HOST=`
-    `DB_USERNAME=`
-    `DB_PASSWORD=`
+    ```bash
+    DB_HOST=
+    DB_USERNAME=
+    DB_PASSWORD=
 
 5. **Migrar la Base de Datos**
 
     Ejecuta las migraciones de la base de datos para crear las tablas necesarias:
 
-    `php artisan migrate`
+    ```bash
+    php artisan migrate
 
 6. **Compilar los Assets**
 
     Compila los assets de frontend (React) usando Vite:
-
-    `npm run dev`
+    
+    ```bash
+    npm run dev
 
 7. **Iniciar el Servidor de Desarrollo**
 
     Ejecuta el servidor de desarrollo de Laravel:
 
-    `php artisan serve`
+    ```bash
+    php artisan serve
